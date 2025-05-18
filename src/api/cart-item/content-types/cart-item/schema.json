@@ -1,0 +1,29 @@
+{
+  "kind": "collectionType",
+  "collectionName": "cart_items",
+  "info": {
+    "singularName": "cart-item",
+    "pluralName": "cart-items",
+    "displayName": "cart_item"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "attributes": {
+    "quantity": {
+      "type": "integer"
+    },
+    "cart": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "api::cart.cart",
+      "inversedBy": "cart_items"
+    },
+    "item_variant": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::item-variant.item-variant",
+      "inversedBy": "cart_item"
+    }
+  }
+}

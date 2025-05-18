@@ -1,0 +1,24 @@
+{
+    "kind": "collectionType",
+    "collectionName": "categories",
+    "info": {
+        "singularName": "category",
+        "pluralName": "categories",
+        "displayName": "category",
+        "description": ""
+    },
+    "options": {
+        "draftAndPublish": true
+    },
+    "attributes": {
+        "name": {
+            "type": "string"
+        },
+        "menu_items": {
+            "type": "relation",
+            "relation": "oneToMany",
+            "target": "api::menu-item.menu-item",
+            "mappedBy": "category"
+        }
+    }
+}

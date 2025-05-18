@@ -1,0 +1,28 @@
+{
+    "kind": "collectionType",
+    "collectionName": "carts",
+    "info": {
+        "singularName": "cart",
+        "pluralName": "carts",
+        "displayName": "cart"
+    },
+    "options": {
+        "draftAndPublish": true
+    },
+    "attributes": {
+        "is_active": {
+            "type": "boolean"
+        },
+        "cart_items": {
+            "type": "relation",
+            "relation": "oneToMany",
+            "target": "api::cart-item.cart-item",
+            "mappedBy": "cart"
+        },
+        "user": {
+            "type": "relation",
+            "relation": "manyToOne",
+            "target": "plugin::users-permissions.user"
+        }
+    }
+}

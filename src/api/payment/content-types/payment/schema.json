@@ -1,0 +1,31 @@
+{
+  "kind": "collectionType",
+  "collectionName": "payments",
+  "info": {
+    "singularName": "payment",
+    "pluralName": "payments",
+    "displayName": "payment"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "attributes": {
+    "method": {
+      "type": "enumeration",
+      "enum": ["cash", "card", "online"]
+    },
+    "payment_status": {
+      "type": "enumeration",
+      "enum": ["pending", "paid", "failed"]
+    },
+    "paid_at": {
+      "type": "datetime"
+    },
+    "order": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::order.order",
+      "inversedBy": "payment"
+    }
+  }
+}
