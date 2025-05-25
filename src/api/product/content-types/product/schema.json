@@ -1,0 +1,102 @@
+{
+  "kind": "collectionType",
+  "collectionName": "products",
+  "info": {
+    "singularName": "product",
+    "pluralName": "products",
+    "displayName": "product"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "attributes": {
+    "name": {
+      "type": "string"
+    },
+    "slug": {
+      "type": "uid",
+      "targetField": "name"
+    },
+    "price": {
+      "type": "integer"
+    },
+    "shortDescription": {
+      "type": "text"
+    },
+    "longDescription": {
+      "type": "text"
+    },
+    "mainImage": {
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ],
+      "type": "media",
+      "multiple": false
+    },
+    "illustrationImage": {
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ],
+      "type": "media",
+      "multiple": false
+    },
+    "additionalImages": {
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ],
+      "type": "media",
+      "multiple": true
+    },
+    "ingredients": {
+      "type": "text"
+    },
+    "tastingNotes": {
+      "type": "text"
+    },
+    "haiku": {
+      "type": "text"
+    },
+    "characterName": {
+      "type": "string"
+    },
+    "characterSpecies": {
+      "type": "string"
+    },
+    "characterHobbies": {
+      "type": "string"
+    },
+    "headerBgColor": {
+      "type": "string"
+    },
+    "titleBgColor": {
+      "type": "string"
+    },
+    "subtitleBgColor": {
+      "type": "string"
+    },
+    "detailPageBgColor": {
+      "type": "string"
+    },
+    "categories": {
+      "type": "relation",
+      "relation": "manyToMany",
+      "target": "api::category.category",
+      "inversedBy": "products"
+    },
+    "packs": {
+      "type": "relation",
+      "relation": "manyToMany",
+      "target": "api::pack.pack",
+      "inversedBy": "products"
+    }
+  }
+}

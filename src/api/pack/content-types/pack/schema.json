@@ -1,0 +1,23 @@
+{
+  "kind": "collectionType",
+  "collectionName": "packs",
+  "info": {
+    "singularName": "pack",
+    "pluralName": "packs",
+    "displayName": "pack"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "attributes": {
+    "name": {
+      "type": "string"
+    },
+    "products": {
+      "type": "relation",
+      "relation": "manyToMany",
+      "target": "api::product.product",
+      "mappedBy": "packs"
+    }
+  }
+}
